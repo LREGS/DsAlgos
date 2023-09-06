@@ -128,7 +128,7 @@ using the square root of n it is the only way of being non linear because there 
 
 very simple algorithm to sort things 
 
-An array is sorted is Xi < Xi + 1
+An array that is sorted is Xi < Xi + 1
 
 Bubble sort starts in the first position and checks if its larger or smaller than the value next to it, and if it is they will swap.
 
@@ -139,11 +139,17 @@ This means the array in question can smaller with every interation
 Bubble sort is O(n2)
 
 export default function bubble_sort(arr: number[]): void {
+sort = [4,3,2,8,6,3,5]
 
+    // Gets the first element in the array
     for (let i = 0; i < arr.length; i++){
+        //gets the second element in the array
         for (let j = 0; j < arr.length - 1 - i; ++j){
+            // compares the first to the second
             if(arr[j] > arr[j+1]) {
+                // stores the larger of the value to move right 
                 const tmp = arr[j];
+                //move the larger value to the right (bubble rises, smaller sink )
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tmp;
             }
