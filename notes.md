@@ -149,7 +149,7 @@ sort = [4,3,2,8,6,3,5]
             if(arr[j] > arr[j+1]) {
                 // stores the larger of the value to move right 
                 const tmp = arr[j];
-                //move the larger value to the right (bubble rises, smaller sink )
+                //move the larger value to the right (bubble rises, smaller sink)
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tmp;
             }
