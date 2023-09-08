@@ -21,6 +21,6 @@ def binary_search(sorted_list, target):
     return - 1
 
 l = [1,2,3,4,5,6]
-t = 7
+t = 3
 
 print(binary_search(l,t))
