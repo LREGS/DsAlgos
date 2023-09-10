@@ -25,3 +25,6 @@ sorted_array = [1,2,3,4,5,6,7,8]
 index = binary_search(sorted_array, target)
 
 print(index)
+
+#Has a O(logn) run time complexity because you're halving the amount of operations with each cycle of the algorithms'
+
