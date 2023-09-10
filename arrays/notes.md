@@ -298,3 +298,7 @@ Quicksort can be O(logN), however, in an example of a reverse sorted list for ex
 The less swaps it needs to be the quicker it will complete 
 
 Sometimes the pivot is chose at random??? to help aid in the runtime of the algorithm 
+
+As the algorithm compares along the aray for values smaller than the pivot it will swap them to ensure the smallest values are sorted towards the left
+    - if the pivot was further to the right, then it will need to swapped to adher to the rule that everything smaller than the pivot to the left an everything greater than the pivot to the right 
+
