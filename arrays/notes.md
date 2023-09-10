@@ -283,3 +283,18 @@ Base case:
 - if its the end 
 - places we've already been 
 
+
+# Quick Sort 
+split the array in half, with the half value being your sorted value, and then keep splitting seperating the right and left lot of values in a tree like strucute
+
+[0,1,2,3,4]
+
+pivor = 2
+left half [0,1]
+right half [3,4]
+
+Quicksort can be O(logN), however, in an example of a reverse sorted list for example it could be (On^2) as it keeps looking for values smaller than it that need to be in the left half and not the right 
+
+The less swaps it needs to be the quicker it will complete 
+
+Sometimes the pivot is chose at random??? to help aid in the runtime of the algorithm 
