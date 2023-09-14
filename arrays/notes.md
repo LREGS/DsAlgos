@@ -302,3 +302,11 @@ Sometimes the pivot is chose at random??? to help aid in the runtime of the algo
 As the algorithm compares along the aray for values smaller than the pivot it will swap them to ensure the smallest values are sorted towards the left
     - if the pivot was further to the right, then it will need to swapped to adher to the rule that everything smaller than the pivot to the left an everything greater than the pivot to the right 
 
+Quick sort can be O(n2) if done on the wrong dataset such as a reverse sorted list where each element needed to be pushed to the other side of the pointer before it could be sorted 
+to try and avoid it being O(n2) 
+- always pick middle element 
+- if its random youll have a random chance of being somewhere near the middle 
+
+The runtime is somewhere between on2 and ologn 
+
+Merge sort will always have an N(Logn) run time but it can use more memory?? and sometimes quicksort is better 
