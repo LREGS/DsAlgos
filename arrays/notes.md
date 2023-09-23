@@ -310,3 +310,27 @@ to try and avoid it being O(n2)
 The runtime is somewhere between on2 and ologn 
 
 Merge sort will always have an N(Logn) run time but it can use more memory?? and sometimes quicksort is better 
+
+# Quick Sort / Algorithm Illustrated
+
+- uses less memory than mergesort because it works in place swapping elements rather than creating new arays?
+
+- choose a pivot and do a partial sort where everything to the left is smaller, and everything to the right is lager than the array. 
+
+- the partition subroutine is O(n) fast and requires next to no extra memory because its only swapping in place. After the first partial sort the size of the problem to be sorted has also gotten smaller 
+
+- If the pivot was in the first position, you would keep track of two idx, walking them along the array, and moving everything smaller than the pivot to the left of the lowest index, and everytime you find a value greater than the p the lowest index remains in place but the higher index moves forward once. Once you reach the end of the array your lowest index will point to the position where the pivot now needs to be. 
+
+- for quicksort to be good, it needs to have a good pivot which is roughly in the middle of the array if was sorted. choosing the wrong array could lead to an algorithm with O(n^2) run time. 
+
+- with an idealized pivot where the pivot is the median number (equal values either side of it) then the runtime is O(nlogn)
+
+- The simplest way to choose a pivot is with randomness - as in the end it will equal out as the most effecient approach as you aren't needing to intensively find the median of a large data set 
+
+- the running time of a randomized pivot is somewhere between O(N^2) and O(nLogN) but the average runtime is O(NlogN)
+
+-
+
+
+
+
