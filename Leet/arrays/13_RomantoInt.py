@@ -16,7 +16,7 @@ def dank (s: str):
         if roman[s[i]] < roman[s[i + 1]]:
             value = roman[s[i + 1]] - roman[s[i]]
             total += value
-        else:
+        elif roman[s[i]] >= roman[s[i + 1]]:
             value = roman[s[i]]
             total += value
     print(total)
