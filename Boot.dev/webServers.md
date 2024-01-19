@@ -41,5 +41,10 @@ Any type with a ServeHTTP method that matches the http.HandlerFunc signature is 
 # Lost loads of notes  :(
 
 
+# Storage 
 
-fds:
+The important part of web application is the storage of data.
+
+Any perm data you want really needs to be stored in a database
+
+
