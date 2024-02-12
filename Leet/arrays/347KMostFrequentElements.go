@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -54,9 +53,9 @@ func topKFrequent(nums []int, k int) []int {
 
 }
 
-func main() {
-	nums := []int{1, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8, 8}
-	answer := topKFrequent(nums, 3)
-	fmt.Println(answer)
+// func main() {
+// 	nums := []int{1, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8, 8}
+// 	answer := topKFrequent(nums, 3)
+// 	fmt.Println(answer)
 
-}
+// }
