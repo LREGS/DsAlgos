@@ -1,8 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"reflect"
 	"strconv"
-	"unicode"
 )
 
 //map the string with key = key index then to decode string turn string into list spli
@@ -24,12 +25,23 @@ func encode(strs []string) (rs string) {
 func decode(inp string) []string {
 	str := make([]string, 0)
 
-	nextWord := 0
+	var newStr = ""
 
 	for _, char := range inp {
-		switch {
-		case unicode.IsDigit(char):
-			nextWord = int(char)
+		if reflect.TypeOf(int(char)) == reflect.TypeOf(int(0)) {
+			newStr = inp[0 : int(char)+1]
+			str = append(str, newStr)
 		}
+		break
 	}
+
+	return str
+
+}
+
+func main() {
+	str := "4!dank4!dank4!dank"
+	newStr := decode(str)
+
+	fmt.Println(newStr)
 }
