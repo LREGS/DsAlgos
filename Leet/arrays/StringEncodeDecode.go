@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"strconv"
+	"unicode"
+)
 
 //map the string with key = key index then to decode string turn string into list spli
 //use a char as a deliminater and then strip that when presenting the stirng - this will
@@ -11,7 +14,7 @@ func encode(strs []string) (rs string) {
 	ss := ""
 
 	for _, s := range strs {
-		delim := s + "!"
+		delim := strconv.Itoa(len(s)) + "!" + s
 		ss += delim
 	}
 	return ss
@@ -19,11 +22,14 @@ func encode(strs []string) (rs string) {
 }
 
 func decode(inp string) []string {
-	result := strings.Split(inp, "!")
-	return result
-}
+	str := make([]string, 0)
 
+	nextWord := 0
 
-func main(){
-	
+	for _, char := range inp {
+		switch {
+		case unicode.IsDigit(char):
+			nextWord = int(char)
+		}
+	}
 }
