@@ -10,32 +10,28 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 //we want to sort the list, and iterate over the list and subtract the ith + 1 index from the current number, and if the result == 1 append to consec list, else, consec list is complete
 
+// need to use i instead and then do range (len(nums) - )
 func longestConsecutive(nums []int) int {
-	sort.Ints(nums)
 
 	consec := make([]int, 0)
 
-	for i, num := range nums {
-		if i+1 > len(nums) {
-			break
+	for i := 0; i < (len(nums) - 1); i++ {
+		if nums[i+1]-nums[i] == 1 {
+			consec = append(consec, nums[i])
+
 		}
-		if nums[i+1]-num == 1 {
-			consec = append(consec, num)
-		}
-		if nums[i+1]-num != 1 {
-			break
+		if nums[i+1]-nums[i] != 1 {
+			continue
 		}
 	}
 	return len(consec)
 }
-
 func main() {
-	nums := []int{4, 3, 2, 1}
+	nums := []int{5, 4, 3, 2, 1}
 	answer := longestConsecutive(nums)
 
 	fmt.Println(answer)
