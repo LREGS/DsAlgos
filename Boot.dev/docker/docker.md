@@ -18,10 +18,20 @@ some microservices can be defined in an image and can be scaled at a click of a 
 
 # Storage 
 
-many docker containers are stateless. When you create a new continare from the same image it wont store any information from before, when you restart the docker/getting-started container for example you're starting from scratch. 
+many docker containers are stateless. When you create a new continare from the same image it wont store any information from before, when you restart the docker/getting-started container for example you're starting from scratch. :
 
 Although, there is a way to manage persistent state through the use of storage volumes. This is a little bit similar to how a memory card worked in an old playstation. 
 
 
+docker run -d -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 -v ghost-vol:/var/lib/ghost/content ghost
 
+-e NODE_ENV - tells docker to run this is development mode and not production mode 
+
+url=x 
+
+This tells docker we want it to be accessible at the given url on our local machine 
+
+-p does some port forwarding between the container and our host machine 
+
+the last section mounts the ghost volume which is basically a storage layer for said docker image, as otherwise nothing would be stored
 
