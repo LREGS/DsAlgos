@@ -35,3 +35,36 @@ This tells docker we want it to be accessible at the given url on our local mach
 
 the last section mounts the ghost volume which is basically a storage layer for said docker image, as otherwise nothing would be stored
 
+A volume is the only way for data to persists between container restarts. If you want to delete your volume you can:
+
+docker run -d -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 -v ghost-vol:/var/lib/ghost/content ghost
+
+docker -rm CONTAINER_ID deletes a container 
+
+
+# Load Balancers 
+
+There is no way that a single server ( a single computer) could handle all of the requests that come from a website the size of google. 
+
+As a result they use  something called a load balance that can route requests to different servers. 
+
+A central server called a load balance recieves traffic from users then routes those raw requests to different back end application servers. In the case of google this splits the worlds traddic across potentally many differnent thousands of computers. 
+
+One method of load balancing is to make the cuyrrent server more powerful (verticle scaling)
+
+Horizontal scaling is buying more servers 
+
+Scaling horizontaly is way more complex 
+
+With a loadbalancer, it does no real work, all it does is route/point work. It doesnt knowl how to handle requests specifically, but its knows what applications are responsible for the requests. 
+
+So a loadbalance sits on top of multiple back end servers that can execute on the requests. 
+
+A round robin is on e way of doing load balancing. My initial issue with this is that its not filtering requests based on size. so worst case scenario is that one server recieves all the most intense requests, and one server recieves all the least intensive requests 
+- for a normal website they will normally be about the same size so it will be fine 
+
+In the event though that request resources are needing to be considered 
+
+A more sophisticated approach involces the servers sending the loadbalancers its current cpu usage. The load balancer can then identify the servers that are using the least amount of cpu and then sent requests to them and keep it more equal. 
+
+Once all your servers get close to their compacity, a new server can be spawned in, and the load balance will prioritise sending load to thew newest servers until it is balanced out again
