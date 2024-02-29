@@ -67,4 +67,13 @@ In the event though that request resources are needing to be considered
 
 A more sophisticated approach involces the servers sending the loadbalancers its current cpu usage. The load balancer can then identify the servers that are using the least amount of cpu and then sent requests to them and keep it more equal. 
 
-Once all your servers get close to their compacity, a new server can be spawned in, and the load balance will prioritise sending load to thew newest servers until it is balanced out again
+Once all your servers get cldase to their compacity, a new server can be spawned in, and the load balance will prioritise sending load to thew newest servers until it is balanced out again
+
+# Custom Networks 
+
+Docker allows you to create a custom bridge network so containers can communicate but remain otherwise isolated. 
+
+
+docker network create caddytest
+
+This command will: create a bridge by the name provided
