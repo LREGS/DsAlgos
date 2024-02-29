@@ -16,17 +16,24 @@ import (
 
 // need to use i instead and then do range (len(nums) - )
 func longestConsecutive(nums []int) int {
+	
+	set := make(mape[int]bool)
+	for num := range nums{
+	    set[num] =true
+	}
 
-	consec := make([]int, 0)
+
+
+	consec := make(map[int][]int)
+
+
 
 	for i := 0; i < (len(nums) - 1); i++ {
-		if nums[i+1]-nums[i] == 1 {
-			consec = append(consec, nums[i])
-
-		}
-		if nums[i+1]-nums[i] != 1 {
-			continue
-		}
+		test := nums[i] - 1
+		_, ok := set[test]{
+		swith ok{
+		case false:
+			consec[test] = append(consec[test], test)
 	}
 	return len(consec)
 }
