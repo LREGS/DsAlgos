@@ -6,22 +6,38 @@ func twoSum(numbers []int, target int) []int {
 
 	res := make([]int, 0)
 
-	for i, num := range numbers {
-		t := target - num
-		for j, nums := range numbers {
-			if nums == t {
-				if i == j {
-					res = append(res, i, j+1)
-					return res
-				}
-				res = append(res, i+1, j+1)
-				return res
-			}
+	start := 0
+	end := len(numbers) - 1
+
+	for start < end {
+
+		t := (numbers[start] + numbers[end])
+
+		switch {
+		case t == target:
+			res = append(res, start+1, end+1)
+			return res
+		case t < target:
+			start++
+		case t > target:
+			end = end - 1
 		}
+
 	}
 	return res
 
 }
+
+// for i, num := range numbers {
+// 	t := target - num
+// 	for j := i + 1; j < len(numbers); j++{
+// 		if numbers[j] == t {
+// 			res = append(res, i+1, j+1)
+// 			return res
+// 		}
+// 	}
+// }
+// return res
 
 func main() {
 	numbers := []int{1, 2}
