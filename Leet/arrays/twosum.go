@@ -8,12 +8,12 @@ func twoSum(numbers []int, target int) []int {
 
 	for i, num := range numbers {
 		t := target - num
-		for j, num := range numbers[i:] {
-			if num == t {
-				// if i == j {
-				// 	res = append(res, i, j+1)
-				// 	return res
-				// }
+		for j, nums := range numbers {
+			if nums == t {
+				if i == j {
+					res = append(res, i, j+1)
+					return res
+				}
 				res = append(res, i+1, j+1)
 				return res
 			}
