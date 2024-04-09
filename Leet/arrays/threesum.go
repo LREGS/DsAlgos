@@ -1,14 +1,30 @@
 package main
 
-func threeSum(num []int) [][]int {
+import "fmt"
 
-	targe := 0
+func threeSum(num []int) {
 
-	x := 0
-	y := 1
-	z := len(num - 1)
+	// target := 0
 
-	for y < z {
+	for i := 0; i < len(num); i++ {
+		// answer := make([][]int, 0)
+
+		y := i + 1
+		z := (len(num) - 1)
+		for y < z {
+			// subAns := make([]int, 0)
+			fmt.Print(z)
+			// fmt.Printf("%d, %d, %d", num[i], num[y], num[z])
+			y++
+			z--
+
+		}
 
 	}
+
+}
+
+func main() {
+	nums := []int{-1, 1, 0, 2, -3, -5, 6, 3}
+	threeSum(nums)
 }

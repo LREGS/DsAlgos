@@ -334,3 +334,82 @@ Merge sort will always have an N(Logn) run time but it can use more memory?? and
 
 
 
+# Tree Traversal
+
+A traversal is where you visit every node, and recurse 
+
+There's three types of tree traversals 
+
+- start with the root 
+- recursed
+- print root node, and move left 
+# Pre order traversal
+
+            7
+           /
+          23
+         /
+        5    
+Terminus node go back up to 23 and recurse 
+
+            7
+           /
+          23
+         /  \
+        5    4
+You would then recurse, find nothing, go up to 23, find nothing, go up to 7 and:
+
+                7
+           /       \
+          23        3
+         /  \      / \
+        5    4    18  21
+
+It woud repeat the same steps as last time as recurssing left, until it cant and going back and then recurssing right until it cant. 
+
+# In order traversal
+Have two recurssive statements, one that is recurssing the left hand side of the tree and the other 
+the right hand side 
+
+RecurseL()
+Visitnode()
+RecurseR()
+
+You would recurse left until there is nothing left to recurse and then start printing. So in the same tree:
+
+                7
+           /       \
+          23        3
+         /  \      / \
+        5    4    18  21
+
+The print statement would look as followings:
+
+[5,23,4,7,18,3,21]
+
+Firstly it would traverse the left side of the tree (line 375) and would return all the values, 
+once that is finished recurseR would be called and the right side of the tree would be evaluated 
+
+This makes a differen
+
+# Postorder traversal 
+
+Keep going left until you cant:
+
+[5,]
+
+go to 23 and go left or right:
+
+[5,4,]
+
+Back up to 23 and we're all searched 
+
+[5,4,23]
+
+We now do the same on the right hand side 
+
+[5,4,23, 18, 21, 3, 7]
+
+The root node is at the end. In pre order the root is first, inorder has the root node in the middle 
+and the post order has the root node at the end.
+
