@@ -2,7 +2,7 @@ Logs can have limitations because they aren't neccassarily returning the informa
 This can be specifically problematic with multi language code bases, and you sometimes need expensive tools like splunk and elasticsearch to analyse them 
 
 A trace represents end-to-end processes in your application and contains spans. 
-
+hj
 Spans call in a trace and they have:
   - attributes 
   - events- named strings 
