@@ -53,10 +53,7 @@ func isValid(ts string) bool {
 	for _, c := range ts {
 
 		_, ok := Open[c]
-		if !ok {
-			continue
-
-		} else {
+		if ok {
 			currentlyOpen.Add(string(c))
 			v := Close[c]
 			if string(v) != currentlyOpen.Peek() {
@@ -64,6 +61,8 @@ func isValid(ts string) bool {
 			} else {
 				currentlyOpen.Pop()
 			}
+		} else {
+			return false
 		}
 
 	}
