@@ -28,7 +28,7 @@ func (s *Stack) Pop() {
 }
 
 func (s *Stack) Peek() string {
-	if len(s.stack) < 0 {
+	if len(s.stack) > 0 {
 		return s.stack[len(s.stack)-1]
 	} else {
 		return " "
@@ -45,26 +45,31 @@ func isValid(ts string) bool {
 	// else, continue
 	//if stack empty parenthese = valid
 
+	if !(len(ts) > 1) {
+		return false
+	}
+
 	currentlyOpen := Stack{stack: make([]string, 0)}
 
-	Open := map[rune]bool{'(': true, '{': true, '[': true}
+	// Open := map[rune]bool{'(': true, '{': true, '[': true}
 	Close := map[rune]rune{')': '(', '}': '{', ']': '['}
 
-	for _, c := range ts {
+	_, ok := Close[rune(ts[0])]
+	if ok {
+		return false
+	}
 
-		_, ok := Open[c]
+	for _, c := range ts {
+		_, ok := Close[c]
 		if ok {
-			currentlyOpen.Add(string(c))
-			v := Close[c]
-			if string(v) != currentlyOpen.Peek() {
-				continue
-			} else {
+			if currentlyOpen.Peek() == string(Close[c]) {
 				currentlyOpen.Pop()
+			} else {
+				return false
 			}
 		} else {
-			return false
+			currentlyOpen.Add(string(c))
 		}
-
 	}
 
 	if len(currentlyOpen.stack) > 0 {
