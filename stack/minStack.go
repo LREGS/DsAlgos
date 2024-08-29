@@ -26,6 +26,11 @@ func (s *MinStack) Pop() {
 	if len(s.stack) > 0 {
 		s.stack = s.stack[:len(s.stack)-1]
 	}
+	if len(s.stack) > 0 {
+		s.CurrentMin = s.FullTop()[1]
+	} else {
+		s.CurrentMin = 0
+	}
 }
 
 func (s *MinStack) FullTop() []int {
