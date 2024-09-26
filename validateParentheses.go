@@ -11,6 +11,8 @@ Open brackets are closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.
 Return true if s is a valid string, and false otherwise.
 
+
+vampire
 */
 
 type Stack struct {
